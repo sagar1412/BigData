@@ -60,6 +60,7 @@ hadoop fs -copyFromLocal trees.csv /hadoop-user
 - COPY TO HDFS TO LOCAL FS
 
 ```
+
 hadoop fs -copyToLocal /hadoop-user/trees.csv .
 ```
 
