@@ -1,0 +1,29 @@
+﻿schema = new StructType()
+      .add("Street",StringType,true)
+      .add("City",StringType,true)
+      .add("State",StringType,true)
+      .add("Zip",StringType,true)
+      .add("Beds",StringType,true)
+      .add("Baths",StringType,true)
+      .add("Sq_feet",StringType,true)
+      .add("flat_type",StringType,true)
+      .add("Price",StringType,true)
+    val df_with_schema = spark.read.format("csv")
+      .option("header", "true")
+      .schema(schema)
+      .load("src/main/resources/real_state.csv")
+    df_with_schema.printSchema()
+    df_with_schema.show(false)
+	
+	
+	
+	
+	
+	
+Write Spark DataFrame to CSV file
+Use the Spark DataFrameWriter object “write” method on DataFrame to write a CSV file. 
+
+ 
+ df2.write
+ .option("header","true")
+ .csv("/tmp/spark_output/real_state")
